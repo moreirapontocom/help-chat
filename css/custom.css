@@ -4,7 +4,10 @@
 	bottom: 0;
 	right: 2%;
 	background-color: #CCC;
-	box-shadow: #666 0px 0px 10px;
+	box-shadow: #000 0px 0px 5px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
 }
 
 #hc-container h3 {
@@ -30,5 +33,6 @@
 .hc-content {
 	width: 94%;
 	margin: 0 auto;
-	padding: 0;
+	padding: 15px 0;
+	display: block;
 }

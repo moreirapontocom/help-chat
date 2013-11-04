@@ -4,7 +4,8 @@
 		obj = $(this);
 
 		defaults = {
-			title : "We'll call to you",
+			title : "Contact us",
+			titleWindow : "We'll call to you",
 			send : "Submit",
 			messages : {
 				error : "Some error has occurred.",
@@ -66,7 +67,12 @@
 		});
 
 		//console.log('height: ' + obj.find('.hc-content').height() );
-		obj.css('bottom', '-' + (obj.find('.hc-content').height() + obj.find('h3').height()) + 'px');
+
+		obj.find('.hc-content').css('display', 'none');
+		obj.find('h3').text( settings.title ).css('width','auto').click(function() {
+			obj.find('h3').text( settings.titleWindow );
+			obj.find('.hc-content').css('display','block').addClass('hc-content');
+		});
 
 		return this;
 	};
@@ -90,6 +96,8 @@
 
 		} else {
 			obj.find('h3').addClass('success').html( settings.messages.success );
+
+			obj.find('.hc-content').css('display', 'none');
 
 			name.val('');
 			phone.val('');
